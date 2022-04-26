@@ -1,0 +1,16 @@
+E1 = 1.7238; % MeV
+E3 = 3.7010; % MeV
+E4 = 3.8405; % MeV
+
+data = readmatrix("k5example.txt", "NumHeaderLines", 9, "FileType", "text");
+
+x = data(:,1);
+y = data(:,2);
+
+plot(x,y);
+
+[peak1, fit1, fitrange1] = fitpeak(2033, 2279, x, y);
+[peak2, fit2, fitrange2] = fitpeak(4370, 4800, x, y);
+[peak3, fit3, fitrange3] = fitpeak(4800, 5200, x, y);
+
+peak1
